@@ -1,11 +1,11 @@
 import React from "react";
-import Header from "../components/Header";
-import HeroSection from "../components/HeroSection";
-import FeaturesSection from "../components/FeaturesSection";
-import TestimonialsSection from "../components/TestimonialsSection";
-import GetStartedSection from "../components/GetStartedSection";
-import Footer from "../components/Footer";
-import WhyChooseUsSection from "../components/WhyChooseUsSection";
+import Header from "../components/landingPageComponents/Header";
+import HeroSection from "../components/landingPageComponents/HeroSection";
+import FeaturesSection from "../components/landingPageComponents/FeaturesSection";
+import TestimonialsSection from "../components/landingPageComponents/TestimonialsSection";
+import GetStartedSection from "../components/landingPageComponents/GetStartedSection";
+import Footer from "../components/landingPageComponents/Footer";
+import WhyChooseUsSection from "../components/landingPageComponents/WhyChooseUsSection";
 
 const Page = () => {
   return (
