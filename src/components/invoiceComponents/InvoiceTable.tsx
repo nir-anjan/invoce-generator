@@ -1,5 +1,6 @@
 import React from "react";
 import InvoiceTableRow from "./InvoiceTableRow";
+import Link from "next/link";
 
 const invoices = [
   {
@@ -96,7 +97,13 @@ const InvoiceTable: React.FC = () => (
       <div className="flex-1 px-4 py-3">View</div>
     </div>
     {invoices.map((invoice) => (
-      <InvoiceTableRow key={invoice.id} {...invoice} />
+      <Link
+        key={invoice.id}
+        href={`/invoices/${invoice.id}`}
+        className="block hover:bg-[#f0f2f4] transition-colors duration-150 cursor-pointer"
+      >
+        <InvoiceTableRow {...invoice} />
+      </Link>
     ))}
   </div>
 );
