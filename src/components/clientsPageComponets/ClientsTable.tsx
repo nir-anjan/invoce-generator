@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const clients = [
   {
@@ -38,6 +39,10 @@ const clients = [
   },
 ];
 
+function slugify(str: string) {
+  return str.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+}
+
 const ClientsTable = () => (
   <div className="bg-white border border-[#DEE0E3] rounded-xl w-full overflow-hidden">
     <table className="w-full border-collapse">
@@ -62,26 +67,30 @@ const ClientsTable = () => (
       </thead>
       <tbody>
         {clients.map((c, i) => (
-          <tr
-            key={i}
-            className={i !== 0 ? "border-t border-[#E6E8EB]" : undefined}
-          >
-            <td className="font-normal text-[#121417] text-sm py-2 px-4">
-              {c.client}
-            </td>
-            <td className="font-normal text-[#6B7582] text-sm py-2 px-4">
-              {c.contact}
-            </td>
-            <td className="font-normal text-[#6B7582] text-sm py-2 px-4">
-              {c.email}
-            </td>
-            <td className="font-normal text-[#6B7582] text-sm py-2 px-4">
-              {c.phone}
-            </td>
-            <td className="font-normal text-[#6B7582] text-sm py-2 px-4">
-              {c.address}
-            </td>
-          </tr>
+          <Link key={i} href={`/clients/${slugify(c.client)}`} legacyBehavior>
+            <tr
+              className={
+                (i !== 0 ? "border-t border-[#E6E8EB] " : "") +
+                "hover:bg-[#F2F2F5] cursor-pointer transition-colors"
+              }
+            >
+              <td className="font-normal text-[#121417] text-sm py-2 px-4">
+                {c.client}
+              </td>
+              <td className="font-normal text-[#6B7582] text-sm py-2 px-4">
+                {c.contact}
+              </td>
+              <td className="font-normal text-[#6B7582] text-sm py-2 px-4">
+                {c.email}
+              </td>
+              <td className="font-normal text-[#6B7582] text-sm py-2 px-4">
+                {c.phone}
+              </td>
+              <td className="font-normal text-[#6B7582] text-sm py-2 px-4">
+                {c.address}
+              </td>
+            </tr>
+          </Link>
         ))}
       </tbody>
     </table>
