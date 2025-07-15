@@ -11,8 +11,8 @@ const ClientHistorySummary: React.FC<Props> = ({
   deals,
   avgDeal,
 }) => (
-  <div className="flex flex-wrap gap-4 p-4">
-    <div className="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-[#dbe0e6]">
+  <div className="flex flex-col md:flex-row flex-wrap gap-4 p-2 md:p-4 w-full">
+    <div className="flex min-w-[140px] flex-1 flex-col gap-2 rounded-xl p-4 md:p-6 border border-[#dbe0e6]">
       <p className="text-[#111418] text-base font-medium leading-normal">
         Total Business Value
       </p>
@@ -20,7 +20,7 @@ const ClientHistorySummary: React.FC<Props> = ({
         {totalValue}
       </p>
     </div>
-    <div className="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-[#dbe0e6]">
+    <div className="flex min-w-[140px] flex-1 flex-col gap-2 rounded-xl p-4 md:p-6 border border-[#dbe0e6]">
       <p className="text-[#111418] text-base font-medium leading-normal">
         Number of Deals
       </p>
@@ -28,7 +28,7 @@ const ClientHistorySummary: React.FC<Props> = ({
         {deals}
       </p>
     </div>
-    <div className="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-[#dbe0e6]">
+    <div className="flex min-w-[140px] flex-1 flex-col gap-2 rounded-xl p-4 md:p-6 border border-[#dbe0e6]">
       <p className="text-[#111418] text-base font-medium leading-normal">
         Average Deal Size
       </p>
