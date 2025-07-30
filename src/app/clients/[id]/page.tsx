@@ -4,7 +4,6 @@ import ClientIdentification from "@/components/clientComponents/ClientIdentifica
 import ClientHistorySummary from "@/components/clientComponents/ClientHistorySummary";
 import ClientDealsTable from "@/components/clientComponents/ClientDealsTable";
 import ClientPastInvoicesTable from "@/components/clientComponents/ClientPastInvoicesTable";
-import { useParams } from "next/navigation";
 
 const mockClient = {
   name: "Sarah Johnson",
