@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 interface InvoiceBreadcrumbsProps {
@@ -8,12 +9,12 @@ const InvoiceBreadcrumbs: React.FC<InvoiceBreadcrumbsProps> = ({
   invoiceId,
 }) => (
   <div className="flex flex-wrap gap-2 p-4">
-    <a
+    <Link
       className="text-[#617589] text-base font-medium leading-normal"
       href="/invoices"
     >
       Invoices
-    </a>
+    </Link>
     <span className="text-[#617589] text-base font-medium leading-normal">
       /
     </span>

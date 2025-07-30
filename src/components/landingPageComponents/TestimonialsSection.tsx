@@ -18,8 +18,9 @@ const TestimonialsSection: React.FC = () => (
           ></div>
           <div>
             <p className="text-[#111418] text-base font-medium leading-normal">
-              "InvoiceGenius has saved me countless hours. It's incredibly easy
-              to use and my clients love the professional look of the invoices."
+              &quot;InvoiceGenius has saved me countless hours. It&apos;s
+              incredibly easy to use and my clients love the professional look
+              of the invoices.&quot;
             </p>
             <p className="text-[#60758a] text-sm font-normal leading-normal">
               Sarah Miller, Freelance Writer
@@ -37,8 +38,8 @@ const TestimonialsSection: React.FC = () => (
           ></div>
           <div>
             <p className="text-[#111418] text-base font-medium leading-normal">
-              "I was struggling with invoicing until I found InvoiceGenius. The
-              customizable templates are a game-changer."
+              &quot;I was struggling with invoicing until I found InvoiceGenius.
+              The customizable templates are a game-changer.&quot;
             </p>
             <p className="text-[#60758a] text-sm font-normal leading-normal">
               David Chen, Web Developer
@@ -56,8 +57,9 @@ const TestimonialsSection: React.FC = () => (
           ></div>
           <div>
             <p className="text-[#111418] text-base font-medium leading-normal">
-              "The automated reminders feature has significantly reduced my late
-              payments. InvoiceGenius is a must-have for any freelancer."
+              &quot;The automated reminders feature has significantly reduced my
+              late payments. InvoiceGenius is a must-have for any
+              freelancer.&quot;
             </p>
             <p className="text-[#60758a] text-sm font-normal leading-normal">
               Emily Rodriguez, Graphic Designer

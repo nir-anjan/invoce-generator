@@ -5,7 +5,18 @@ interface ClientFormProps {
   onSuccess?: () => void;
 }
 
-const initialState = {
+interface FormState {
+  companyName: string;
+  clientName: string;
+  email: string;
+  phone: string;
+  address: string;
+  notes: string;
+  taxId: string;
+  website: string;
+}
+
+const initialState: FormState = {
   companyName: "",
   clientName: "",
   email: "",
@@ -20,8 +31,8 @@ const validateEmail = (email: string) => /^\S+@\S+\.\S+$/.test(email);
 
 const ClientForm: React.FC<ClientFormProps> = ({ onSuccess }) => {
   const router = useRouter();
-  const [form, setForm] = useState(initialState);
-  const [errors, setErrors] = useState<any>({});
+  const [form, setForm] = useState<FormState>(initialState);
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
 
@@ -29,11 +40,15 @@ const ClientForm: React.FC<ClientFormProps> = ({ onSuccess }) => {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
-    setErrors({ ...errors, [e.target.name]: undefined });
+    setErrors((prev) => {
+      const newErrors = { ...prev };
+      delete newErrors[e.target.name];
+      return newErrors;
+    });
   };
 
   const validate = () => {
-    const errs: any = {};
+    const errs: { [key: string]: string } = {};
     if (!form.companyName) errs.companyName = "Company name is required";
     if (!form.clientName) errs.clientName = "Client name is required";
     if (!form.email) errs.email = "Email is required";
@@ -85,6 +100,7 @@ const ClientForm: React.FC<ClientFormProps> = ({ onSuccess }) => {
             </span>
           )}
         </label>
+
         <label className="flex flex-col w-full">
           <span className="text-[#111418] text-base font-medium pb-1">
             Client Name
@@ -105,6 +121,7 @@ const ClientForm: React.FC<ClientFormProps> = ({ onSuccess }) => {
             </span>
           )}
         </label>
+
         <label className="flex flex-col w-full">
           <span className="text-[#111418] text-base font-medium pb-1">
             Email
@@ -123,6 +140,7 @@ const ClientForm: React.FC<ClientFormProps> = ({ onSuccess }) => {
             <span className="text-red-500 text-xs mt-1">{errors.email}</span>
           )}
         </label>
+
         <label className="flex flex-col w-full">
           <span className="text-[#111418] text-base font-medium pb-1">
             Phone Number
@@ -141,6 +159,7 @@ const ClientForm: React.FC<ClientFormProps> = ({ onSuccess }) => {
             <span className="text-red-500 text-xs mt-1">{errors.phone}</span>
           )}
         </label>
+
         <label className="flex flex-col md:col-span-2 w-full">
           <span className="text-[#111418] text-base font-medium pb-1">
             Address
@@ -159,6 +178,7 @@ const ClientForm: React.FC<ClientFormProps> = ({ onSuccess }) => {
             <span className="text-red-500 text-xs mt-1">{errors.address}</span>
           )}
         </label>
+
         <label className="flex flex-col md:col-span-2 w-full">
           <span className="text-[#111418] text-base font-medium pb-1">
             Notes (optional)
@@ -172,9 +192,11 @@ const ClientForm: React.FC<ClientFormProps> = ({ onSuccess }) => {
             disabled={submitting}
           />
         </label>
+
         <div className="text-[#111418] text-base font-bold pt-2 pb-1 md:col-span-2">
           Optional Fields
         </div>
+
         <label className="flex flex-col w-full">
           <span className="text-[#111418] text-base font-medium pb-1">
             Tax ID (optional)
@@ -188,6 +210,7 @@ const ClientForm: React.FC<ClientFormProps> = ({ onSuccess }) => {
             disabled={submitting}
           />
         </label>
+
         <label className="flex flex-col w-full">
           <span className="text-[#111418] text-base font-medium pb-1">
             Website (optional)
@@ -202,6 +225,7 @@ const ClientForm: React.FC<ClientFormProps> = ({ onSuccess }) => {
           />
         </label>
       </div>
+
       <div className="flex justify-end gap-3 px-4 py-3 w-full">
         <button
           type="button"
@@ -219,6 +243,7 @@ const ClientForm: React.FC<ClientFormProps> = ({ onSuccess }) => {
           {submitting ? "Saving..." : success ? "Saved!" : "Save"}
         </button>
       </div>
+
       {success && (
         <div className="text-green-600 text-center mt-2">
           Client added successfully!

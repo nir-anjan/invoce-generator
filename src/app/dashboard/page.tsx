@@ -2,8 +2,6 @@
 import React from "react";
 import OverviewCard from "@/components/dashboard/OverviewCard";
 import RecentActivityItem from "@/components/dashboard/RecentActivityItem";
-import QuickActionButton from "@/components/dashboard/QuickActionButton";
-import DashboardHeader from "@/components/invoiceComponents/DashboardHeader";
 
 const DashboardPage = () => {
   return (

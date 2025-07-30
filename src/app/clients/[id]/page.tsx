@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import DashboardHeader from "@/components/invoiceComponents/DashboardHeader";
 import ClientIdentification from "@/components/clientComponents/ClientIdentification";
 import ClientHistorySummary from "@/components/clientComponents/ClientHistorySummary";
 import ClientDealsTable from "@/components/clientComponents/ClientDealsTable";
@@ -83,7 +82,6 @@ const mockClient = {
 };
 
 const ClientPage = () => {
-  const params = useParams();
   // In a real app, fetch client by params.id
   const client = mockClient;
 

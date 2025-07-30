@@ -2,7 +2,6 @@ import React from "react";
 import ClientsHeader from "@/components/clientsPageComponets/ClientsHeader";
 import ClientsSearchBar from "@/components/clientsPageComponets/ClientsSearchBar";
 import ClientsTable from "@/components/clientsPageComponets/ClientsTable";
-import DashboardHeader from "@/components/invoiceComponents/DashboardHeader";
 
 const ClientsPage = () => {
   return (

@@ -70,7 +70,7 @@ export default function AddNewClientPage() {
             <div className="mb-8">
               <h1 className="text-2xl sm:text-3xl font-bold">Add New Client</h1>
               <p className="text-sm text-[#61758A] mt-3">
-                Enter the client's details below
+                Enter the client&apos;s details below
               </p>
             </div>
 
